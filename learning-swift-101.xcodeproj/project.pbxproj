@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */; };
-		B3ED676C29988D4D00C95FD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED676B29988D4D00C95FD2 /* ContentView.swift */; };
 		B3ED676E29988D4F00C95FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED676D29988D4F00C95FD2 /* Assets.xcassets */; };
 		B3ED677229988D4F00C95FD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED677129988D4F00C95FD2 /* Preview Assets.xcassets */; };
 		B3ED677C29988D4F00C95FD2 /* learning_swift_101Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED677B29988D4F00C95FD2 /* learning_swift_101Tests.swift */; };
 		B3ED678629988D4F00C95FD2 /* learning_swift_101UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED678529988D4F00C95FD2 /* learning_swift_101UITests.swift */; };
 		B3ED678829988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED678729988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift */; };
+		B3ED67952998995600C95FD2 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67942998995600C95FD2 /* CommonHelper.swift */; };
+		B3ED679729989E4200C95FD2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED679629989E4200C95FD2 /* NavigationHelper.swift */; };
+		B3ED67A32998A4C700C95FD2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67A22998A4C700C95FD2 /* Login.swift */; };
+		B3ED67A52998A4FB00C95FD2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		B3ED676629988D4D00C95FD2 /* learning-swift-101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "learning-swift-101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learning_swift_101App.swift; sourceTree = "<group>"; };
-		B3ED676B29988D4D00C95FD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3ED676D29988D4F00C95FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3ED676F29988D4F00C95FD2 /* learning_swift_101.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = learning_swift_101.entitlements; sourceTree = "<group>"; };
 		B3ED677129988D4F00C95FD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +47,10 @@
 		B3ED678129988D4F00C95FD2 /* learning-swift-101UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "learning-swift-101UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED678529988D4F00C95FD2 /* learning_swift_101UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learning_swift_101UITests.swift; sourceTree = "<group>"; };
 		B3ED678729988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learning_swift_101UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B3ED67942998995600C95FD2 /* CommonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
+		B3ED679629989E4200C95FD2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		B3ED67A22998A4C700C95FD2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +101,13 @@
 		B3ED676829988D4D00C95FD2 /* learning-swift-101 */ = {
 			isa = PBXGroup;
 			children = (
-				B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */,
-				B3ED676B29988D4D00C95FD2 /* ContentView.swift */,
 				B3ED676D29988D4F00C95FD2 /* Assets.xcassets */,
 				B3ED676F29988D4F00C95FD2 /* learning_swift_101.entitlements */,
+				B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */,
+				B3ED679629989E4200C95FD2 /* NavigationHelper.swift */,
 				B3ED677029988D4F00C95FD2 /* Preview Content */,
+				B3ED67A62998A51F00C95FD2 /* Utils */,
+				B3ED679F2998A4A800C95FD2 /* Views */,
 			);
 			path = "learning-swift-101";
 			sourceTree = "<group>";
@@ -127,6 +135,23 @@
 				B3ED678729988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift */,
 			);
 			path = "learning-swift-101UITests";
+			sourceTree = "<group>";
+		};
+		B3ED679F2998A4A800C95FD2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED67A22998A4C700C95FD2 /* Login.swift */,
+				B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3ED67A62998A51F00C95FD2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED67942998995600C95FD2 /* CommonHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3ED676C29988D4D00C95FD2 /* ContentView.swift in Sources */,
+				B3ED679729989E4200C95FD2 /* NavigationHelper.swift in Sources */,
+				B3ED67A32998A4C700C95FD2 /* Login.swift in Sources */,
 				B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */,
+				B3ED67A52998A4FB00C95FD2 /* Dashboard.swift in Sources */,
+				B3ED67952998995600C95FD2 /* CommonHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
