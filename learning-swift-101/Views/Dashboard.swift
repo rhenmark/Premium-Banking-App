@@ -7,12 +7,41 @@
 
 import SwiftUI
 
+struct Home: View {
+    var body: some View {
+        Text("Home")
+    }
+}
+
+struct Transaction: View {
+    var body: some View {
+        Text("Transaction")
+    }
+}
+
+struct Account: View {
+    var body: some View {
+        Text("Account")
+    }
+}
+
 struct Dashboard: View {
     var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            Home()
+                .tabItem{
+                    Label("Home", systemImage: "home")
+                }
+            Transaction()
+                .tabItem{
+                    Label("Transaction", systemImage: "home")
+                }
+            Account()
+                .tabItem{
+                    Label("Account", systemImage: "home")
+                }
         }
-        .navigationTitle("Dashboard")
+        .navigationBarHidden(true)
     }
 }
 

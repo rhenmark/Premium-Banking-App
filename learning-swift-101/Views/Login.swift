@@ -38,6 +38,7 @@ struct Login: View {
                 .padding(10)
                 .background(Color.blue)
                 .cornerRadius(4)
+                .disabled(true)
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
