@@ -9,45 +9,68 @@ import SwiftUI
 
 let Helper = CommonHelper();
 
+let backgroundUi = LinearGradient(colors: [Color.white, Color.red], startPoint: .bottom, endPoint: .top)
+
 struct Login: View {
     
     @State var username: String = ""
     @State var password: String = ""
     @State var isClicked: Bool = false
     
+    private let loginTxt: String = "Login"
+    private let signupTxt: String = "Signup"
+    
     var body: some View {
         NavigationStack {
-            VStack() {
-                Text(Helper.greetings())
-                TextField("Username", text: $username)
-                    .frame(height: 48.0)
-                    .padding(.horizontal, 8)
-                    .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.844, opacity: 0.93))
-                SecureField("Password", text: $password)
-                    .frame(height: 48.0)
-                    .padding(.horizontal, 8)
-                    .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.844, opacity: 0.93))
-                
-                Button(action: {
-                    isClicked = true
-                }){
-                    Text("Signin")
+            VStack(){
+                VStack() {
+                    Text(Helper.greetings())
+                    TextField("Username", text: $username)
+//                        .frame(height: 48.0)
+//                        .padding(.horizontal, 8)
+                        .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.844, opacity: 0.93))
+                        .hidden()
+                    SecureField("Password", text: $password)
+//                        .frame(height: 48.0)
+//                        .padding(.horizontal, 8)
+                        .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.844, opacity: 0.93))
+                        .hidden()
+                    
+                    Button(action: {
+                        isClicked = true
+                    }){
+                        Text("Signin")
+                    }
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .padding(10)
+                    .background(Color.blue)
+                    .cornerRadius(4)
+                    .disabled(self.isClicked)
+                    
+                    Button(action: {
+                        isClicked = true
+                    }){
+                        Text(loginTxt)
+                    }
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .padding(10)
+                    .background(Color.black)
+                    .cornerRadius(4)
+                    .disabled(self.isClicked)
+                    
                 }
-                .foregroundColor(Color.white)
-                .frame(maxWidth: .infinity, maxHeight: 40)
-                .padding(10)
-                .background(Color.blue)
-                .cornerRadius(4)
-                .disabled(true)
-                
+                .frame(alignment: .bottom)
+                .padding(20)
+                .foregroundColor(Color.black)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(20)
-            .background(Color.white)
-            .foregroundColor(Color.black)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .background(backgroundUi)
             .navigationDestination(isPresented: $isClicked) {
                 Dashboard()
             }
+
         }
     }
 }
