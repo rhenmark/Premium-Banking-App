@@ -7,69 +7,53 @@
 
 import SwiftUI
 
-let Helper = CommonHelper();
-
-let backgroundUi = LinearGradient(colors: [Color.white, Color.red], startPoint: .bottom, endPoint: .top)
 
 struct Login: View {
     
-    @State var username: String = ""
-    @State var password: String = ""
+    let Helper = CommonHelper();
+    let dummyImage = "https://i.pravatar.cc/200?img=6"
+
     @State var isClicked: Bool = false
-    
-    private let loginTxt: String = "Login"
-    private let signupTxt: String = "Signup"
     
     var body: some View {
         NavigationStack {
-            VStack(){
-                VStack() {
-                    Text(Helper.greetings())
-                    TextField("Username", text: $username)
-//                        .frame(height: 48.0)
-//                        .padding(.horizontal, 8)
-                        .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.844, opacity: 0.93))
-                        .hidden()
-                    SecureField("Password", text: $password)
-//                        .frame(height: 48.0)
-//                        .padding(.horizontal, 8)
-                        .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.844, opacity: 0.93))
-                        .hidden()
-                    
-                    Button(action: {
-                        isClicked = true
-                    }){
-                        Text("Signin")
-                    }
-                    .foregroundColor(Color.white)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .padding(10)
-                    .background(Color.blue)
-                    .cornerRadius(4)
-                    .disabled(self.isClicked)
-                    
-                    Button(action: {
-                        isClicked = true
-                    }){
-                        Text(loginTxt)
-                    }
-                    .foregroundColor(Color.white)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .padding(10)
-                    .background(Color.black)
-                    .cornerRadius(4)
-                    .disabled(self.isClicked)
-                    
+            VStack(alignment: .leading, spacing: 20) {
+                VStack {
+                    AsyncImage(url: URL(string: dummyImage))
+                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 200, height: 200)
+                        .clipShape(Circle())
+                    Spacer()
+                        .frame(height: 24)
+                    Text("Welcome back,")
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
+                    Spacer()
+                        .frame(height: 24)
+                    Text("John Doe")
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
                 }
-                .frame(alignment: .bottom)
-                .padding(20)
-                .foregroundColor(Color.black)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                
+                Button {
+                    self.isClicked = true
+                } label: {
+                    Label("", systemImage: "arrow.forward.circle")
+                        .font(.system(size: 32))
+                }
+                .foregroundColor(Color.white)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(height: 60)
+                .padding()
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            .background(backgroundUi)
+            .frame(maxWidth: .infinity, alignment: .center)
             .navigationDestination(isPresented: $isClicked) {
                 Dashboard()
             }
+            .background(Color("primary"))
 
         }
     }
