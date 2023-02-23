@@ -50,10 +50,11 @@ struct Login: View {
                 
             }
             .frame(maxWidth: .infinity, alignment: .center)
+            .background(Color("primary"))
             .navigationDestination(isPresented: $isClicked) {
                 Dashboard()
             }
-            .background(Color("primary"))
+            .navigationBarBackButtonHidden()
 
         }
     }

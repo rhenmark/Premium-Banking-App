@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B34F0D1229A7DE1600F82585 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F0D1129A7DE1600F82585 /* LoginScreen.swift */; };
 		B3A878C829A494B4000180EA /* CardListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A878C729A494B4000180EA /* CardListing.swift */; };
 		B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */; };
 		B3ED676E29988D4F00C95FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED676D29988D4F00C95FD2 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B34F0D1129A7DE1600F82585 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		B3A878C729A494B4000180EA /* CardListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListing.swift; sourceTree = "<group>"; };
 		B3B24760299A4D1F003904A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3ED676629988D4D00C95FD2 /* learning-swift-101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "learning-swift-101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B34F0D0F29A7DDC000F82585 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED67A22998A4C700C95FD2 /* Login.swift */,
+				B34F0D1129A7DE1600F82585 /* LoginScreen.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B34F0D1029A7DDD800F82585 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		B3A878C629A49488000180EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +172,8 @@
 		B3ED679F2998A4A800C95FD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3ED67A22998A4C700C95FD2 /* Login.swift */,
-				B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */,
+				B34F0D0F29A7DDC000F82585 /* Login */,
+				B34F0D1029A7DDD800F82585 /* Dashboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +320,7 @@
 				B3ED67A32998A4C700C95FD2 /* Login.swift in Sources */,
 				B3A878C829A494B4000180EA /* CardListing.swift in Sources */,
 				B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */,
+				B34F0D1229A7DE1600F82585 /* LoginScreen.swift in Sources */,
 				B3ED67A52998A4FB00C95FD2 /* Dashboard.swift in Sources */,
 				B3ED67952998995600C95FD2 /* CommonHelper.swift in Sources */,
 			);
