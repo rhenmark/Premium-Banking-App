@@ -7,54 +7,51 @@
 
 import SwiftUI
 
+struct CreditItemsData: Identifiable, Hashable {
+    var id = UUID()
+    var icon: String
+    var title: String
+    var description: String? = ""
+}
+
 struct CreditListHeader: View {
+    var headerTitle: String
     var body: some View {
-        Text("Credit Cards")
+        Text(headerTitle)
     }
 }
 
 struct CreditList: View {
+    var sectionTitle: String
+    var items: [CreditItemsData]
+
     var body: some View {
         NavigationView {
             List {
-                Section(header: CardListingHeader(sectionTitle: "Credit Cards", hideButton: true)) {
-                    HStack {
-                        Label("", systemImage: "pencil")
-                            .labelStyle(IconOnlyLabelStyle())
-                            .font(.system(size: 24))
-                            .frame(width: 24)
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Calculate and take a credit")
-                                .lineLimit(1)
-                            Text("Create a regular payment and transfer")
-                                .font(.caption)
-                                .lineLimit(1)
+                Section(header: CardListingHeader(sectionTitle: sectionTitle, hideButton: true)) {
+                    ForEach(items) { item in
+                        HStack {
+                            Label("", systemImage: item.icon)
+                                .labelStyle(IconOnlyLabelStyle())
+                                .font(.system(size: 24))
+                                .frame(width: 24)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(item.title)
+                                    .lineLimit(1)
+                                if !(item.description?.isEmpty ?? true) {
+                                    Text(item.description ?? "")
+                                        .font(.caption)
+                                        .lineLimit(1)
+                                }
+                            }
+                            .padding()
+                            Spacer()
+                            Label("", systemImage: "chevron.right")
+                                .labelStyle(IconOnlyLabelStyle())
                         }
-                        .padding()
-                        Spacer()
-                        Label("", systemImage: "chevron.right")
-                            .labelStyle(IconOnlyLabelStyle())
-                    }
-                    HStack {
-                        Label("", systemImage: "map")
-                            .labelStyle(IconOnlyLabelStyle())
-                            .font(.system(size: 24))
-                            .frame(maxWidth: 24)
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("ATMs and bank offices")
-                                .lineLimit(1)
-                            Text("Show offices and ATMS on map")
-                                .font(.caption)
-                                .lineLimit(1)
-                        }
-                        .padding()
-                        
-                        Spacer()
-                        Label("", systemImage: "chevron.right")
-                            .labelStyle(IconOnlyLabelStyle())
                     }
                 }
-                .frame(height: 50)
+                .frame(minHeight: 50)
             }
             .background(Color.white)
             .scrollContentBackground(.hidden)
@@ -71,6 +68,12 @@ struct DashboardMain: View {
     @State private var showDrawer = true
     let mainCards = CardGroup(sectionTitle: "Cards", cards: [CardItems(cardName: "MasterCard PremiumB", cardNo: "1234 5678", cardValue: 12000.30), CardItems(cardName: "Visa PremiumB", cardNo: "1234 5678", cardValue: 100.30)])
     let savingsAccounts = CardGroup(sectionTitle: "Savings and Deposit", cards: [CardItems(cardName: "Test deposit account", cardNo: "1234 5678", cardValue: 12000.30)])
+
+    let othersData = [CreditItemsData(
+        icon: "pencil", title: "Calculate and take a credit", description: "Create a regular payment and transfer"
+    ), CreditItemsData(
+        icon: "map", title: "ATMs and bank offices", description: "Show offices and ATMS on map"
+    )]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -99,7 +102,7 @@ struct DashboardMain: View {
                 ScrollView {
                     CardListing(data: mainCards)
                     CardListing(data: savingsAccounts)
-                    CreditList()
+                    CreditList(sectionTitle: "Credit Card", items: othersData)
                 }
                 .background(Color.white)
                 .edgesIgnoringSafeArea(.all)
@@ -118,41 +121,39 @@ struct DashboardMain: View {
 }
 
 struct Dashboard: View {
-    
     @State var activeTab = "Home"
-    
+
     var body: some View {
         TabView(selection: $activeTab) {
             Group {
                 DashboardWrapper(isDashboard: true) {
                     DashboardMain()
                 }.tabItem {
-                        Label("", systemImage: "house")
-                            .labelStyle(.iconOnly)
-                            .offset(y: -20)
-                            .edgesIgnoringSafeArea(.bottom)
+                    Label("", systemImage: "house")
+                        .labelStyle(.iconOnly)
+                        .offset(y: -20)
+                        .edgesIgnoringSafeArea(.bottom)
+                }
+                .tag("Home")
+                .toolbarBackground(.visible, for: .navigationBar, .tabBar)
 
-                    }
-                    .tag("Home")
-                    .toolbarBackground(.visible, for: .navigationBar, .tabBar)
-                    
                 DashboardWrapper(pageTitle: "Transfer and Payments") {
                     TransferPayments()
                 }.tabItem {
-                        Label("", systemImage: "creditcard.fill")
-                            .labelStyle(.iconOnly)
-                    }
-                    .tag("TransferAndPayments")
-                    .toolbarBackground(.visible, for: .navigationBar, .tabBar)
+                    Label("", systemImage: "creditcard.fill")
+                        .labelStyle(.iconOnly)
+                }
+                .tag("TransferAndPayments")
+                .toolbarBackground(.visible, for: .navigationBar, .tabBar)
 
-                DashboardWrapper(pageTitle: "Finances") {Finances()}
+                DashboardWrapper(pageTitle: "Finances") { Finances() }
                     .tabItem {
                         Label("", systemImage: "chart.pie.fill")
                             .labelStyle(.iconOnly)
                     }
                     .tag("Finances")
                     .toolbarBackground(.visible, for: .navigationBar, .tabBar)
-                DashboardWrapper(pageTitle: "Settings"){Settings()}
+                DashboardWrapper(pageTitle: "Settings") { Settings() }
                     .tabItem {
                         Label("", systemImage: "gearshape")
                             .labelStyle(.iconOnly)
