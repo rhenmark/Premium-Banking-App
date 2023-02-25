@@ -65,8 +65,7 @@ struct CreditList: View {
     }
 }
 
-struct Home: View {
-    let dummyImage = "https://i.pravatar.cc/40?img=6"
+struct DashboardMain: View {
     let coreFeatures: [(menu: String, icon: String)] = [(menu: "Send", icon: "arrow.up.forward.circle"), (menu: "Request", icon: "arrow.down.left.circle"), (menu: "Scan", icon: "qrcode"), (menu: "Currency", icon: "dollarsign.circle")]
 
     @State private var showDrawer = true
@@ -75,27 +74,6 @@ struct Home: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(spacing: 20) {
-                AsyncImage(url: URL(string: dummyImage))
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                    .scaledToFill()
-                VStack(alignment: .leading) {
-                    Text("Hi John,")
-                        .font(.headline)
-                    Text("Your card is ready!")
-                        .font(.system(size: 12))
-                }
-                Spacer()
-                Label("", systemImage: "bell.fill")
-                    .labelStyle(.iconOnly)
-                    .badge(2)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 20)
-            .padding(.trailing, 20)
-            Spacer()
-                .frame(height: 32)
             HStack {
                 ForEach(coreFeatures, id: \.menu) { menu, icon in
                     Spacer()
@@ -139,30 +117,16 @@ struct Home: View {
     }
 }
 
-struct Cards: View {
-    var body: some View {
-        Text("Transaction")
-    }
-}
-
-struct Finances: View {
-    var body: some View {
-        Text("Account")
-    }
-}
-
-struct Settings: View {
-    var body: some View {
-        Text("Account")
-    }
-}
-
 struct Dashboard: View {
+    
+    @State var activeTab = "Home"
+    
     var body: some View {
-        TabView {
+        TabView(selection: $activeTab) {
             Group {
-                Home()
-                    .tabItem {
+                DashboardWrapper(isDashboard: true) {
+                    DashboardMain()
+                }.tabItem {
                         Label("", systemImage: "house")
                             .labelStyle(.iconOnly)
                             .offset(y: -20)
@@ -172,22 +136,23 @@ struct Dashboard: View {
                     .tag("Home")
                     .toolbarBackground(.visible, for: .navigationBar, .tabBar)
                     
-                Cards()
-                    .tabItem {
+                DashboardWrapper(pageTitle: "Transfer and Payments") {
+                    TransferPayments()
+                }.tabItem {
                         Label("", systemImage: "creditcard.fill")
                             .labelStyle(.iconOnly)
                     }
-                    .tag("Cards")
+                    .tag("TransferAndPayments")
                     .toolbarBackground(.visible, for: .navigationBar, .tabBar)
 
-                Finances()
+                DashboardWrapper(pageTitle: "Finances") {Finances()}
                     .tabItem {
                         Label("", systemImage: "chart.pie.fill")
                             .labelStyle(.iconOnly)
                     }
                     .tag("Finances")
                     .toolbarBackground(.visible, for: .navigationBar, .tabBar)
-                Settings()
+                DashboardWrapper(pageTitle: "Settings"){Settings()}
                     .tabItem {
                         Label("", systemImage: "gearshape")
                             .labelStyle(.iconOnly)

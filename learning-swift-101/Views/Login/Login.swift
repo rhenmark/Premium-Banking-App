@@ -1,70 +1,82 @@
 //
-//  Login.swift
+//  LoginScreen.swift
 //  learning-swift-101
 //
-//  Created by Rhen Mark on 12/2/23.
+//  Created by Rhen Mark on 24/2/23.
 //
 
 import SwiftUI
 
-
 struct Login: View {
+    @State var isLoginClicked = false
     
-    let Helper = CommonHelper();
-    let dummyImage = "https://i.pravatar.cc/200?img=6"
-
-    @State var isClicked: Bool = false
+    func setIsLogin() {
+        self.isLoginClicked = true
+    }
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 20) {
-                VStack {
-                    AsyncImage(url: URL(string: dummyImage))
-                        .scaledToFit()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 200, height: 200)
-                        .clipShape(Circle())
+            VStack {
+                HStack {
+                    Button(action: {
+                        setIsLogin()
+                    }) {
+                        Text("Log In")
+                            .font(.system(size: 24))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 40)
+                    .padding()
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(16)
+                    
                     Spacer()
-                        .frame(height: 24)
-                    Text("Welcome back,")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                    Spacer()
-                        .frame(height: 24)
-                    Text("John Doe")
-                        .font(.system(size: 32, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
+                        .frame(width: 16)
+                    Button(action: {
+                        setIsLogin()
+                    }) {
+                        Label("", systemImage: "faceid")
+                            .labelStyle(IconOnlyLabelStyle())
+                            .font(.system(size: 32))
+                            .frame(height: 40)
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(16)
+                    }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                
-                Button {
-                    self.isClicked = true
-                } label: {
-                    Label("", systemImage: "arrow.forward.circle")
-                        .font(.system(size: 32))
-                }
-                .foregroundColor(Color.white)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .frame(height: 60)
                 .padding()
+                .padding(.bottom, -12)
                 
+                HStack {
+                    Button(action: {}) {
+                        Text("Become a client")
+                            .font(.system(size: 24))
+                    }
+                    .frame(height: 40)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.white)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(16)
+                    .shadow(radius: 5)
+                }
+                .padding(.top, 0)
+                .padding()
             }
-            .frame(maxWidth: .infinity, alignment: .center)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .background(Color("primary"))
-            .navigationDestination(isPresented: $isClicked) {
-                Dashboard()
+            .navigationDestination(isPresented: $isLoginClicked) {
+                Welcome()
             }
-            .navigationBarBackButtonHidden()
-
         }
+        
     }
 }
 
-struct Login_Previews: PreviewProvider {
+struct LoginScreen_Previews: PreviewProvider {
     static var previews: some View {
-        let iPhone14: String = "iPhone 14 Pro Max"
-        
         Login()
-            .previewDevice(PreviewDevice(rawValue: iPhone14))
     }
 }

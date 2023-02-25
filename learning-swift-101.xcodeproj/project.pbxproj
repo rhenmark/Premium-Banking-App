@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B34F0D1229A7DE1600F82585 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F0D1129A7DE1600F82585 /* LoginScreen.swift */; };
+		B34F0D1229A7DE1600F82585 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F0D1129A7DE1600F82585 /* Login.swift */; };
+		B372FA6329A9B8D9000F2343 /* DashboardWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6229A9B8D9000F2343 /* DashboardWrapper.swift */; };
+		B372FA6529A9C0D7000F2343 /* TransferPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6429A9C0D7000F2343 /* TransferPayments.swift */; };
+		B372FA6729A9C104000F2343 /* Finances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6629A9C104000F2343 /* Finances.swift */; };
+		B372FA6929A9C12A000F2343 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6829A9C12A000F2343 /* Settings.swift */; };
 		B3A878C829A494B4000180EA /* CardListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A878C729A494B4000180EA /* CardListing.swift */; };
 		B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */; };
 		B3ED676E29988D4F00C95FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED676D29988D4F00C95FD2 /* Assets.xcassets */; };
@@ -17,7 +21,7 @@
 		B3ED678829988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED678729988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift */; };
 		B3ED67952998995600C95FD2 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67942998995600C95FD2 /* CommonHelper.swift */; };
 		B3ED679729989E4200C95FD2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED679629989E4200C95FD2 /* NavigationHelper.swift */; };
-		B3ED67A32998A4C700C95FD2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67A22998A4C700C95FD2 /* Login.swift */; };
+		B3ED67A32998A4C700C95FD2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67A22998A4C700C95FD2 /* Welcome.swift */; };
 		B3ED67A52998A4FB00C95FD2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B34F0D1129A7DE1600F82585 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		B34F0D1129A7DE1600F82585 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B372FA6229A9B8D9000F2343 /* DashboardWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWrapper.swift; sourceTree = "<group>"; };
+		B372FA6429A9C0D7000F2343 /* TransferPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayments.swift; sourceTree = "<group>"; };
+		B372FA6629A9C104000F2343 /* Finances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finances.swift; sourceTree = "<group>"; };
+		B372FA6829A9C12A000F2343 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B3A878C729A494B4000180EA /* CardListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListing.swift; sourceTree = "<group>"; };
 		B3B24760299A4D1F003904A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3ED676629988D4D00C95FD2 /* learning-swift-101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "learning-swift-101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +62,7 @@
 		B3ED678729988D4F00C95FD2 /* learning_swift_101UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learning_swift_101UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3ED67942998995600C95FD2 /* CommonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		B3ED679629989E4200C95FD2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
-		B3ED67A22998A4C700C95FD2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B3ED67A22998A4C700C95FD2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,8 +94,8 @@
 		B34F0D0F29A7DDC000F82585 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B3ED67A22998A4C700C95FD2 /* Login.swift */,
-				B34F0D1129A7DE1600F82585 /* LoginScreen.swift */,
+				B3ED67A22998A4C700C95FD2 /* Welcome.swift */,
+				B34F0D1129A7DE1600F82585 /* Login.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -96,14 +104,34 @@
 			isa = PBXGroup;
 			children = (
 				B3ED67A42998A4FB00C95FD2 /* Dashboard.swift */,
+				B372FA6429A9C0D7000F2343 /* TransferPayments.swift */,
+				B372FA6629A9C104000F2343 /* Finances.swift */,
+				B372FA6829A9C12A000F2343 /* Settings.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B372FA6029A9B89A000F2343 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				B3A878C729A494B4000180EA /* CardListing.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		B372FA6129A9B8A6000F2343 /* DashboardWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				B372FA6229A9B8D9000F2343 /* DashboardWrapper.swift */,
+			);
+			path = DashboardWrapper;
 			sourceTree = "<group>";
 		};
 		B3A878C629A49488000180EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B3A878C729A494B4000180EA /* CardListing.swift */,
+				B372FA6129A9B8A6000F2343 /* DashboardWrapper */,
+				B372FA6029A9B89A000F2343 /* Card */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -317,12 +345,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED679729989E4200C95FD2 /* NavigationHelper.swift in Sources */,
-				B3ED67A32998A4C700C95FD2 /* Login.swift in Sources */,
+				B3ED67A32998A4C700C95FD2 /* Welcome.swift in Sources */,
+				B372FA6329A9B8D9000F2343 /* DashboardWrapper.swift in Sources */,
 				B3A878C829A494B4000180EA /* CardListing.swift in Sources */,
 				B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */,
-				B34F0D1229A7DE1600F82585 /* LoginScreen.swift in Sources */,
+				B34F0D1229A7DE1600F82585 /* Login.swift in Sources */,
+				B372FA6729A9C104000F2343 /* Finances.swift in Sources */,
 				B3ED67A52998A4FB00C95FD2 /* Dashboard.swift in Sources */,
 				B3ED67952998995600C95FD2 /* CommonHelper.swift in Sources */,
+				B372FA6929A9C12A000F2343 /* Settings.swift in Sources */,
+				B372FA6529A9C0D7000F2343 /* TransferPayments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
