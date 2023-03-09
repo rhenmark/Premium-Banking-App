@@ -10,7 +10,7 @@
 import Foundation
 
 struct NavigationHelper {
-    private enum Screens {
+     enum Screens {
         case Login
         case Home
     }
