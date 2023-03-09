@@ -12,6 +12,7 @@
 		B372FA6529A9C0D7000F2343 /* TransferPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6429A9C0D7000F2343 /* TransferPayments.swift */; };
 		B372FA6729A9C104000F2343 /* Finances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6629A9C104000F2343 /* Finances.swift */; };
 		B372FA6929A9C12A000F2343 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372FA6829A9C12A000F2343 /* Settings.swift */; };
+		B39EE7AB29BA3A1A00325656 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39EE7AA29BA3A1900325656 /* Authentication.swift */; };
 		B3A878C829A494B4000180EA /* CardListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A878C729A494B4000180EA /* CardListing.swift */; };
 		B3ED676A29988D4D00C95FD2 /* learning_swift_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED676929988D4D00C95FD2 /* learning_swift_101App.swift */; };
 		B3ED676E29988D4F00C95FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED676D29988D4F00C95FD2 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		B372FA6629A9C104000F2343 /* Finances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finances.swift; sourceTree = "<group>"; };
 		B372FA6829A9C12A000F2343 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B39EE7A929BA343100325656 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B39EE7AA29BA3A1900325656 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		B3A878C729A494B4000180EA /* CardListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListing.swift; sourceTree = "<group>"; };
 		B3B24760299A4D1F003904A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3ED676629988D4D00C95FD2 /* learning-swift-101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "learning-swift-101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				B3ED67942998995600C95FD2 /* CommonHelper.swift */,
+				B39EE7AA29BA3A1900325656 /* Authentication.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				B3ED67952998995600C95FD2 /* CommonHelper.swift in Sources */,
 				B372FA6929A9C12A000F2343 /* Settings.swift in Sources */,
 				B372FA6529A9C0D7000F2343 /* TransferPayments.swift in Sources */,
+				B39EE7AB29BA3A1A00325656 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,11 +69,11 @@ struct TransferPayments: View {
                     .frame(height: 4)
                 ScrollView {
                     CreditList(sectionTitle: "Transfer", items: othersData)
-                        .padding(.bottom, -44)
+                        .padding(.bottom, -60)
                     CreditList(sectionTitle: "Pay", items: payList)
                         .frame(height: 500)
                     Spacer()
-                        .frame(height: 60)
+                        .frame(height: 40)
                 }
                 .background(Color.white)
                 
