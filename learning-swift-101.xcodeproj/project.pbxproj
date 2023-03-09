@@ -48,6 +48,7 @@
 		B372FA6429A9C0D7000F2343 /* TransferPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPayments.swift; sourceTree = "<group>"; };
 		B372FA6629A9C104000F2343 /* Finances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finances.swift; sourceTree = "<group>"; };
 		B372FA6829A9C12A000F2343 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B39EE7A929BA343100325656 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B3A878C729A494B4000180EA /* CardListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListing.swift; sourceTree = "<group>"; };
 		B3B24760299A4D1F003904A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3ED676629988D4D00C95FD2 /* learning-swift-101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "learning-swift-101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +140,7 @@
 		B3ED675D29988D4D00C95FD2 = {
 			isa = PBXGroup;
 			children = (
+				B39EE7A929BA343100325656 /* README.md */,
 				B3ED676829988D4D00C95FD2 /* learning-swift-101 */,
 				B3ED677A29988D4F00C95FD2 /* learning-swift-101Tests */,
 				B3ED678429988D4F00C95FD2 /* learning-swift-101UITests */,
