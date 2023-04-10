@@ -12,6 +12,7 @@ struct DashboardWrapper<Content>: View where Content: View {
 
     var isDashboard: Bool?
     var pageTitle: String?
+    var bgColor: Color = Color("primary")
     var childrenView: () -> Content
     
     let defaultPageTitle = "Hi John"
@@ -29,14 +30,17 @@ struct DashboardWrapper<Content>: View where Content: View {
                 VStack(alignment: .leading) {
                     Text(pageTitle ?? defaultPageTitle )
                         .font(.headline)
+                        .foregroundColor(bgColor == Color.white ? Color.black : Color.white)
                     if isDashboard ?? false {
                         Text("Your card is ready!")
                             .font(.system(size: 12))
+                            .foregroundColor(bgColor == Color.white ? Color.black : Color.white)
                     }
                 }
                 Spacer()
-                Label("", systemImage: "bell.fill")
+                Label("", systemImage: bgColor == Color.white ? "bell" : "bell.fill")
                     .labelStyle(.iconOnly)
+                    .foregroundColor(bgColor == Color.white ? Color.black : Color.white)
                     .badge(2)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -48,7 +52,7 @@ struct DashboardWrapper<Content>: View where Content: View {
             childrenView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color("primary"))
+        .background(bgColor)
         .foregroundColor(Color.white)
     }
 }

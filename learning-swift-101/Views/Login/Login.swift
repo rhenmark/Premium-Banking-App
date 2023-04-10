@@ -17,6 +17,18 @@ struct Login: View {
     var body: some View {
         NavigationStack {
             VStack {
+                VStack {
+                    Text("CashLy")
+                        .font(.system(size: 52))
+                        .fontWeight(.heavy)
+                        .foregroundColor(Color.white)
+                        
+                    Text("Banking made simple")
+                        .font(.system(size: 16))
+                        .foregroundColor(Color.white)
+                        .padding(.leading, 80)
+                }
+                .frame(maxHeight: .infinity)
                 HStack {
                     Button(action: {
                         setIsLogin()
