@@ -153,12 +153,12 @@ struct Dashboard: View {
                     }
                     .tag("Finances")
                     .toolbarBackground(.visible, for: .navigationBar, .tabBar)
-                DashboardWrapper(pageTitle: "Settings") { Settings() }
+                DashboardWrapper(pageTitle: "Contact Us", bgColor: Color.white) { Contacts() }
                     .tabItem {
-                        Label("", systemImage: "gearshape")
+                        Label("", systemImage: "message")
                             .labelStyle(.iconOnly)
                     }
-                    .tag("Settings")
+                    .tag("Contacts")
                     .toolbarBackground(.visible, for: .navigationBar, .tabBar)
             }
             .toolbarBackground(Color.white, for: .tabBar)
